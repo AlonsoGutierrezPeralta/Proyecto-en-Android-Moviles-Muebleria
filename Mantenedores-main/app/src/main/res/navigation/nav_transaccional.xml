@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_transaccional"
+    app:startDestination="@id/transaccionFragment">
+
+    <fragment
+        android:id="@+id/transaccionFragment"
+        android:name="com.example.mantenedores.ui.views.TransaccionFragment"
+        android:label="@string/tituloTransaccionFragment"
+        tools:layout="@layout/fragment_transaccion" >
+        <action
+            android:id="@+id/action_transaccionFragment_to_carritoComprasFragment"
+            app:destination="@id/carritoComprasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carritoComprasFragment"
+        android:name="com.example.mantenedores.ui.views.CarritoComprasFragment"
+        android:label="@string/tituloCompraCarritoFragment"
+        tools:layout="@layout/fragment_carrito_compras" >
+        <argument
+            android:name="lstTransaccion"
+            app:argType="com.example.mantenedores.entity.ListaTransaccion"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_carritoComprasFragment_to_compraExitoFragment"
+            app:destination="@id/compraExitoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compraExitoFragment"
+        android:name="com.example.mantenedores.ui.views.ComprasExitoFragment"
+        android:label="@string/tituloCompraExitoFragment"
+        tools:layout="@layout/fragment_compras_exito" >
+        <argument
+            android:name="lstTransaccion"
+            app:argType="com.example.mantenedores.entity.ListaTransaccion" />
+    </fragment>
+
+
+</navigation>

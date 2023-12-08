@@ -1,0 +1,84 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "d4349173c2a3e2a7c29498600c573f64",
+    "entities": [
+      {
+        "tableName": "tbl_cliente",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_cli` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Nom_cli` TEXT, `Ape_cli` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id_cli",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "Nom_cli",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "apellidos",
+            "columnName": "Ape_cli",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_cli"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tbl_empleado",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_emp` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Nom_emp` TEXT, `Ape_emp` TEXT, `puesto_emp` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id_emp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "Nom_emp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "apellidos",
+            "columnName": "Ape_emp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "puesto",
+            "columnName": "puesto_emp",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_emp"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd4349173c2a3e2a7c29498600c573f64')"
+    ]
+  }
+}

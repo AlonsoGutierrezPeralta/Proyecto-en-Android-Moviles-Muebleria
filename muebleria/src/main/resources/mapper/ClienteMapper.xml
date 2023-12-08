@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pe.com.muebleria.mapper.IClienteMapper">
+
+	<select id="listarTodos" statementType="CALLABLE">
+		CALL usp_lista_client()
+	</select>
+
+	<insert id="registrarCliente"
+		parameterType="pe.com.muebleria.model.base.Cliente"
+		statementType="CALLABLE">
+		{
+		CALL usp_crear_client(
+		#{nombre, jdbcType=VARCHAR, mode=IN},
+		#{apellido, jdbcType=VARCHAR, mode=IN},
+		#{cod_cliente, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</insert>
+
+
+	<update id="actualizarCliente" statementType="CALLABLE">
+		{
+		CALL usp_actualizar_client(
+		#{nombre, jdbcType=VARCHAR, mode=IN},
+		#{apellido, jdbcType=VARCHAR, mode=IN},
+		#{cod_cliente, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</update>
+
+	<delete id="eliminarCliente" statementType="CALLABLE">
+		{
+		CALL usp_eliminar_client(
+		#{cod_cliente, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</delete>
+
+	<select id="buscarPorId" statementType="CALLABLE">
+	
+	</select>
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pe.com.muebleria.mapper.IProveedorMapper">
+
+	<select id="listarTodosProv" statementType="CALLABLE">
+		CALL usp_lista_prov()
+	</select>
+	
+	<insert id="registrarProveedor" 
+		parameterType="pe.com.muebleria.model.base.Proveedor"
+	statementType="CALLABLE">
+    	{
+    	CALL usp_crearProveedor(
+    	#{raz_soc, jdbcType=VARCHAR, mode=IN},
+    	#{ruc, jdbcType=INTEGER, mode=IN},
+    	#{cod_provee, jdbcType=INTEGER, mode=IN}
+    	)}
+    	
+	</insert>
+
+	<update id="actualizarProveedor" statementType="CALLABLE">
+	    {
+	    CALL usp_modificarProveedor(
+	    #{raz_soc, jdbcType=VARCHAR, mode=IN},
+    	#{ruc, jdbcType=INTEGER, mode=IN},
+    	#{cod_provee, jdbcType=INTEGER, mode=IN}
+	    )
+	    }
+	</update>
+	
+	<delete id="eliminarProveedor" statementType="CALLABLE">
+	   {
+	   CALL usp_eliminarProveedor(
+	    #{cod_provee, jdbcType=INTEGER, mode=IN}
+	   )}
+	    
+	</delete>
+
+</mapper>

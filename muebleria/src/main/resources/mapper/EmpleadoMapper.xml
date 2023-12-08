@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pe.com.muebleria.mapper.IEmpleadoMapper">
+
+	<select id="listarTodos" statementType="CALLABLE">
+		CALL usp_lista_emp()
+	</select>
+
+	<insert id="registrarEmpleado"
+		parameterType="pe.com.muebleria.model.base.Empleado"
+		statementType="CALLABLE">
+		{
+		CALL usp_crearEmpleado(
+		#{codigo, jdbcType=INTEGER, mode=IN},
+		#{nombre, jdbcType=VARCHAR, mode=IN},
+		#{apellido, jdbcType=VARCHAR, mode=IN},
+		#{puesto, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</insert>
+
+
+	<update id="actualizarEmpleado" statementType="CALLABLE">
+		{
+		CALL usp_modificarEmpleado(
+		#{codigo, jdbcType=INTEGER, mode=IN},
+		#{nombre, jdbcType=VARCHAR, mode=IN},
+		#{apellido, jdbcType=VARCHAR, mode=IN},
+		#{puesto, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</update>
+
+	<delete id="eliminarEmpleado" statementType="CALLABLE">
+		{
+		CALL usp_eliminarEmpleado(
+		#{codigo, jdbcType=INTEGER, mode=IN}
+
+		)}
+	</delete>
+
+	<select id="buscarPorId" statementType="CALLABLE">
+	
+	</select>
+
+</mapper>

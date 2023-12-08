@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Mantenedores</string>
+
+    <string name="btnMantenedores">Mantenedores</string>
+    <string name="btnConsultas">Consultas</string>
+    <string name="btnReportes">Reportes</string>
+    <string name="btnTransaccion">Transaccion</string>
+
+    <string name="btnClientesCon">Clientes</string>
+    <string name="btnProductosCon">Productos</string>
+    <string name="btnEmpleadosCon">Empleados</string>
+    <string name="btnProveedoresCon">Proveedores</string>
+
+
+    <!--TITULOS-->
+    <string name="tituloMantenimiento">Mantenimientos</string>
+    <string name="tituloConsulta">Consultas</string>
+    <string name="tituloReportes">Reportes</string>
+    <string name="tituloMantenimientoCliente">Mantenimiento Cliente</string>
+    <string name="tituloMantenimientoProducto">Mantenimiento Producto</string>
+    <string name="tituloMantenimientoProovedor">Mantenimiento Proveedor</string>
+    <string name="tituloMantenimientoEmpleado">Mantenimiento Empleado</string>
+
+    <string name="tituloConsultaCliente">Consulta Cliente</string>
+    <string name="tituloConsultaProducto">Consulta Producto</string>
+    <string name="tituloConsultaProovedor">Consulta Proveedor</string>
+    <string name="tituloConsultaEmpleado">Consulta Empleado</string>
+
+
+    <string name="btnClientes">Clientes</string>
+    <string name="btnProductos">Productos</string>
+    <string name="btnEmpleados">Empleados</string>
+    <string name="btnProveedores">Proveedores</string>
+    <string name="vacio">.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- String de Transaccion -->
+    <string name="tituloTransaccionFragment">Menú Compras</string>
+    <!-- String de Carrito de Compras -->
+    <string name="tituloCompraCarritoFragment">Carrito de Compras</string>
+    <string name="tituloCarrito">Carrito de Compras</string>
+    <string name="botonAgregarProductos">Agregar Productos</string>
+    <string name="botonFinalizarCompra">Finalizar Compra</string>
+    <string name="botonQuitar">Quitar</string>
+
+    <!-- String de Compra Exito -->
+    <string name="tituloCompraExitoFragment">Finalizado</string>
+    <string name="tituloCompraExito">Compra realizada con exito!</string>
+    <string name="tituloBoletaExito">Boleta</string>
+    <string name="botonVolverMenuPrincipalCompra">Volver al Menu Principal</string>
+
+    <!-- String de Consulta Clientes-->
+    <string name="codigo">Codigo Cliente</string>
+    <string name="apellido">Apellido</string>
+    <string name="nombre">Nombre</string>
+
+    <!-- String de Consulta Proveedores-->
+    <string name="codigo_prov">Codigo Proveedor</string>
+    <string name="razon_social">Razon Social</string>
+    <string name="ruc">RUC</string>
+    <!-- String de Consulta empleados-->
+    <string name="codigo_emp">Codigo Empleado</string>
+    <string name="apellido_emp">Apellido</string>
+    <string name="nombre_emp">Nombre</string>
+
+    <!-- String de Consulta Productos-->
+    <string name="codigo_prod">Codigo Productos</string>
+    <string name="desc_prod">Descripcion</string>
+    <string name="stock_prod">Stock</string>
+    <string name="pre_prod">Precio</string>
+
+</resources>

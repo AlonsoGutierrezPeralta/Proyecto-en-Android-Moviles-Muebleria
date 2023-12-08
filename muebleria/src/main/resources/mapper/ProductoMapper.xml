@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pe.com.muebleria.mapper.IProductoMapper">
+	
+	 	<select id="listarTodos" statementType="CALLABLE">
+	    {
+	        CALL USP_MANTENIMIENTO_PRODUCTO(
+	        	#{codigoProducto, jdbcType=INTEGER, mode=IN},
+	            #{codigoProveedor, jdbcType=INTEGER, mode=IN},
+	            #{descripcionProducto, jdbcType=VARCHAR, mode=IN},
+	            #{idTipo, jdbcType=INTEGER, mode=IN},
+	            #{stock, jdbcType=INTEGER, mode=IN},
+	            #{precio, jdbcType=DECIMAL, mode=IN},
+	            #{accion, jdbcType=VARCHAR, mode=IN},
+	            #{exito, jdbcType=VARCHAR, mode=OUT}
+	        )
+	    }
+	</select>
+	
+	<select id="mantenimiento" statementType="CALLABLE">
+	    {
+	        CALL USP_MANTENIMIENTO_PRODUCTO(
+	        	#{codigoProducto, jdbcType=INTEGER, mode=IN},
+	            #{codigoProveedor, jdbcType=INTEGER, mode=IN},
+	            #{descripcionProducto, jdbcType=VARCHAR, mode=IN},
+	            #{idTipo, jdbcType=INTEGER, mode=IN},
+	            #{stock, jdbcType=INTEGER, mode=IN},
+	            #{precio, jdbcType=DECIMAL, mode=IN},
+	            #{accion, jdbcType=VARCHAR, mode=IN},
+	            #{exito, jdbcType=VARCHAR, mode=OUT}
+	        )
+	    }
+	</select>
+ 	
+</mapper>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_principal"
+    app:startDestination="@id/menuPrincipal">
+    <fragment
+        android:id="@+id/menuMantenedores"
+        android:name="com.example.mantenedores.ui.MenuMantenedores"
+        android:label="@string/tituloMantenimiento"
+        tools:layout="@layout/activity_menu_mantenedores">
+        <action
+            android:id="@+id/action_menuMantenedores_to_mantenedorCliente"
+            app:destination="@id/mantenedorCliente" />
+        <action
+            android:id="@+id/action_menuMantenedores_to_mantenedorEmpleado"
+            app:destination="@id/mantenedorEmpleado" />
+        <action
+            android:id="@+id/action_menuMantenedores_to_mantenedorProveedor"
+            app:destination="@id/mantenedorProveedor" />
+        <action
+            android:id="@+id/action_menuMantenedores_to_mantenedorProducto"
+            app:destination="@id/mantenedorProducto" />
+        <action
+            android:id="@+id/action_menuMantenedores_to_seccionReporte"
+            app:destination="@id/seccionReporte" />
+        <action
+            android:id="@+id/action_menuMantenedores_to_menuConsultas"
+            app:destination="@id/menuConsultas" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenedorCliente"
+        android:name="com.example.mantenedores.ui.views.MantenedorCliente"
+        android:label="@string/tituloMantenimientoCliente"
+        tools:layout="@layout/activity_mantenedor_cliente">
+        <argument
+            android:name="cliente"
+            app:argType="com.example.mantenedores.entity.Cliente"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenedorEmpleado"
+        android:name="com.example.mantenedores.ui.views.MantenedorEmpleado"
+        android:label="@string/tituloMantenimientoEmpleado"
+        tools:layout="@layout/activity_mantenedor_empleado">
+        <argument
+            android:name="empleado"
+            app:argType="com.example.mantenedores.entity.Empleado"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenedorProveedor"
+        android:name="com.example.mantenedores.ui.views.MantenedorProveedor"
+        android:label="@string/tituloMantenimientoProovedor"
+        tools:layout="@layout/activity_mantenedor_proveedor">
+        <argument
+            android:name="proveedor"
+            app:argType="com.example.mantenedores.entity.Proveedor"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenedorProducto"
+        android:name="com.example.mantenedores.ui.views.MantenedorProducto"
+        android:label="@string/tituloMantenimientoProducto"
+        tools:layout="@layout/activity_mantenedor_producto">
+        <argument
+            android:name="producto"
+            app:argType="com.example.mantenedores.entity.Producto"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seccionReporte"
+        android:name="com.example.mantenedores.ui.views.SeccionReporte"
+        android:label="activity_seccion_reporte"
+        tools:layout="@layout/activity_seccion_reporte" >
+        <action
+            android:id="@+id/action_seccionReporte_to_menuMantenedores"
+            app:destination="@id/menuMantenedores" />
+        <argument
+            android:name="report"
+            app:argType="com.example.mantenedores.entity.Cliente"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuPrincipal"
+        android:name="com.example.mantenedores.ui.views.MenuPrincipal"
+        android:label="MenuPrincipal" >
+        <action
+            android:id="@+id/action_menuPrincipal_to_menuMantenedores"
+            app:destination="@id/menuMantenedores" />
+        <action
+            android:id="@+id/action_menuPrincipal_to_seccionReporte"
+            app:destination="@id/seccionReporte" />
+        <action
+            android:id="@+id/action_menuPrincipal_to_transaccionFragment"
+            app:destination="@id/transaccionFragment" />
+        <action
+            android:id="@+id/action_menuPrincipal_to_menuConsultas"
+            app:destination="@id/menuConsultas" />
+    </fragment>
+    <fragment
+        android:id="@+id/transaccionFragment"
+        android:name="com.example.mantenedores.ui.views.TransaccionFragment"
+        android:label="@string/tituloTransaccionFragment"
+        tools:layout="@layout/fragment_transaccion" >
+        <action
+            android:id="@+id/action_transaccionFragment_to_carritoComprasFragment"
+            app:destination="@id/carritoComprasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carritoComprasFragment"
+        android:name="com.example.mantenedores.ui.views.CarritoComprasFragment"
+        android:label="@string/tituloCompraCarritoFragment"
+        tools:layout="@layout/fragment_carrito_compras" >
+        <argument
+            android:name="lstTransaccion"
+            app:argType="com.example.mantenedores.entity.ListaTransaccion"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_carritoComprasFragment_to_compraExitoFragment"
+            app:destination="@id/compraExitoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compraExitoFragment"
+        android:name="com.example.mantenedores.ui.views.ComprasExitoFragment"
+        android:label="@string/tituloCompraExitoFragment"
+        tools:layout="@layout/fragment_compras_exito" >
+        <argument
+            android:name="lstTransaccion"
+            app:argType="com.example.mantenedores.entity.ListaTransaccion" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.mantenedores.ui.LoginActivity"
+        android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/menuConsultas"
+        android:name="com.example.mantenedores.ui.MenuConsultas"
+        android:label="@string/tituloConsulta"
+        tools:layout="@layout/activity_menu_consultas">
+        <action
+            android:id="@+id/action_menuConsultas_to_consultasCliente"
+            app:destination="@id/consultasCliente" />
+        <action
+            android:id="@+id/action_menuConsultas_to_consultasProductos"
+            app:destination="@id/consultasProductos" />
+        <action
+            android:id="@+id/action_menuConsultas_to_consultasEmpleados"
+            app:destination="@id/consultasEmpleados" />
+        <action
+            android:id="@+id/action_menuConsultas_to_consultasProveedores"
+            app:destination="@id/consultasProveedores" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultasCliente"
+        android:name="com.example.mantenedores.ui.views.ConsultasCliente"
+        android:label="@string/tituloConsultaCliente"
+        tools:layout="@layout/activity_consultas_cliente" />
+    <fragment
+        android:id="@+id/consultasEmpleados"
+        android:name="com.example.mantenedores.ui.views.ConsultasEmpleados"
+        android:label="@string/tituloConsultaEmpleado"
+        tools:layout="@layout/activity_consultas_empleados" />
+    <fragment
+        android:id="@+id/consultasProductos"
+        android:name="com.example.mantenedores.ui.views.ConsultasProductos"
+        android:label="@string/tituloConsultaProducto"
+        tools:layout="@layout/activity_consultas_productos" />
+    <fragment
+        android:id="@+id/consultasProveedores"
+        android:name="com.example.mantenedores.ui.views.ConsultasProveedores"
+        android:label="@string/tituloConsultaProovedor"
+        tools:layout="@layout/activity_consultas_proveedores" />
+</navigation>

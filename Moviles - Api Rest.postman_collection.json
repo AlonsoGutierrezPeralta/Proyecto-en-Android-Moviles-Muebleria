@@ -1,0 +1,572 @@
+{
+	"info": {
+		"_postman_id": "dddf4240-6ae5-4311-961f-ad3a34a441a0",
+		"name": "Moviles - Api Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26683213"
+	},
+	"item": [
+		{
+			"name": "Listar Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/producto/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"producto",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_PROVEEDOR\" : 1001,\r\n    \"DESCRIPCION\" : \"La casita de papel\",\r\n    \"TIPO\" : 5,\r\n    \"STOCK\" : 20,\r\n    \"PRECIO\" : 15.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/producto/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"producto",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Prodcuto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_PRODUCTO\" : 1007,\r\n    \"CODIGO_PROVEEDOR\" : 1001,\r\n    \"DESCRIPCION\" : \"Se actualizo\",\r\n    \"TIPO\" : 5,\r\n    \"STOCK\" : 10,\r\n    \"PRECIO\" : 26.12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/producto/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"producto",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_PRODUCTO\" : 1007\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/producto/eliminar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"producto",
+						"eliminar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"USUARIO\" : \"enzito@gmail.com\",\r\n    \"CONTRASENIA\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/login/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"login",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://facturaaltoque.pe/api_facturacion_electronica/listar_producto_prueba.php/",
+					"protocol": "https",
+					"host": [
+						"facturaaltoque",
+						"pe"
+					],
+					"path": [
+						"api_facturacion_electronica",
+						"listar_producto_prueba.php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compra - Transaccional",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_CLIENTE\" : \"202201\",\r\n    \"DETALLE_BOLETA\" : [\r\n        {\r\n            \"CODIGO_PRODUCTO\" : \"1003\",\r\n            \"CANTIDAD\" : 2,\r\n            \"PRECIO\" : 15.23\r\n        },\r\n        {\r\n            \"CODIGO_PRODUCTO\" : \"1004\",\r\n            \"CANTIDAD\" : 3,\r\n            \"PRECIO\" : 15.23\r\n        },\r\n        {\r\n            \"CODIGO_PRODUCTO\" : \"1005\",\r\n            \"CANTIDAD\" : 1,\r\n            \"PRECIO\" : 15.23\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/boleta/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"boleta",
+						"compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_CLIENTE\": 202212\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/cliente/eliminar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"cliente",
+						"eliminar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Proveedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/proveedor/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"proveedor",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/cliente/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"cliente",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NOMBRE\": \"Javier\",\r\n    \"APELLIDO\": \"Moran\",\r\n    \"CODIGO_CLIENTE\": \"202201\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/cliente/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"cliente",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NOMBRE\": \"Alejandro\",\r\n    \"APELLIDO\": \"Magno\",\r\n    \"CODIGO_CLIENTE\": 202212\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/cliente/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"cliente",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Proveedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RAZ_SOCIAL\": \"Zebra\",\r\n    \"RUC\": 212385180,\r\n    \"CODIGO_PROVEEDOR\": 1006\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/proveedor/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"proveedor",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Proveedor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RAZ_SOCIAL\": \"Zebra New\",\r\n    \"RUC\": 212385180,\r\n    \"CODIGO_PROVEEDOR\": 1006\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/proveedor/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"proveedor",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Proveedor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_PROVEEDOR\" : 1006\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/proveedor/eliminar/1006",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"proveedor",
+						"eliminar",
+						"1006"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Empleado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/empleado/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"empleado",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_EMPLEADO\": 105,\r\n    \"NOMBRE\": \"Julia\",\r\n    \"APELLIDO\": \"Valeria\",\r\n    \"PUESTO\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/empleado/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"empleado",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Empleado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_EMPLEADO\": 105\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/empleado/eliminar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"empleado",
+						"eliminar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Empleado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CODIGO_EMPLEADO\": 105,\r\n    \"NOMBRE\": \"Valeria\",\r\n    \"APELLIDO\": \"Morales\",\r\n    \"PUESTO\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/muebleria/empleado/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"muebleria",
+						"empleado",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
